@@ -1,5 +1,5 @@
 {% set name = "gcm_filters" %}
-{% set version = "0.1.2" %}
+{% set version = "0.1.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 32ed493fbbdf6d599c429b27aee046aec4302e48e4eea28ed81ec9bbd0ce8f03
+  sha256: c33bf22a3e533b24f55f2b82a947559b851d078e57c47c67fa1fbf1df620dfd2
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -36,7 +36,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: 'Diffusion-based Spatial Filtering of Gridded Data from General Circulation Models'
+  summary: Diffusion-based Spatial Filtering of Gridded Data from General Circulation Models
   description: |
     GCM-Filters is a python package that performs spatial filtering analysis in a flexible and efficient way.
     The GCM-Filters algorithm applies a discrete Laplacian to smooth a field through an iterative process that
